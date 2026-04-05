@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Помилка оплати — EVOLUTION</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Onest',sans-serif;background:#16161C;color:#E8E4DC;min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+body::before{content:'';position:absolute;top:20%;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(217,68,98,.2),transparent 60%);filter:blur(80px);pointer-events:none}
+.wrap{text-align:center;max-width:520px;padding:40px 28px;position:relative;z-index:1}
+.icon{font-size:72px;margin-bottom:28px;animation:shake .6s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+h1{font-family:'Unbounded',sans-serif;font-size:clamp(28px,5vw,40px);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.15}
+h1 span{color:#D94462}
+p{font-size:16px;color:#918D86;line-height:1.7;margin-bottom:28px}
+.highlight{background:rgba(217,68,98,.08);border:1px solid rgba(217,68,98,.15);border-radius:16px;padding:24px;margin-bottom:32px}
+.highlight p{margin-bottom:0;font-size:14px;color:#E8E4DC}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Onest',sans-serif;font-weight:700;font-size:15px;padding:16px 36px;border:none;border-radius:100px;cursor:pointer;text-decoration:none;transition:all .3s ease}
+.btn-primary{background:#D94462;color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(217,68,98,.25)}
+.btn-secondary{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.2)}
+.btn-secondary:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.4)}
+.sub{font-size:12px;color:#918D86;margin-top:24px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="icon">❌</div>
+<h1>Оплата <span>не пройшла</span></h1>
+<p>Щось пішло не так під час оплати. Не хвилюйся — твоє місце ще зарезервовано.</p>
+<div class="highlight">
+<p>Можливі причини: недостатньо коштів, ліміт картки, проблема зі з'єднанням. Спробуй ще раз або використай іншу картку.</p>
+</div>
+<div class="btns">
+<a href="https://secure.wayforpay.com/button/b8095f5fb9fc1" class="btn btn-primary">Спробувати ще раз →</a>
+<a href="evolution-landing.html" class="btn btn-secondary">← На сайт</a>
+</div>
+<p class="sub">Якщо проблема повторюється — напиши Владі в Telegram</p>
+</div>
+</body>
+</html>
