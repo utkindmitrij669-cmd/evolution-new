@@ -104,6 +104,12 @@ section{padding:100px 0;position:relative;overflow:hidden}
 .form-btn{width:100%;margin-top:8px}
 .form-note{text-align:center;font-size:12px;color:var(--tdd);margin-top:16px}
 
+/* TARIFF SELECTOR in modal */
+.tariff-select{display:flex;gap:8px}
+.tariff-opt{flex:1;text-align:center;padding:12px 8px;border-radius:12px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);color:var(--tdd);font-size:12.5px;font-weight:600;cursor:pointer;transition:all .25s ease}
+.tariff-opt:hover{border-color:rgba(255,255,255,.2);color:#fff}
+.tariff-opt.active{border-color:var(--red);background:rgba(217,68,98,.1);color:#fff}
+
 /* STICKY CTA */
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:9999;padding:14px 20px;background:linear-gradient(to top,rgba(22,22,28,.98) 60%,rgba(22,22,28,0));pointer-events:none;display:flex;justify-content:center;transform:translateY(100%);transition:transform .4s ease}
 .sticky-cta.show{transform:translateY(0)}
@@ -403,9 +409,9 @@ footer p{font-size:12px;color:var(--tdd);font-family:'Unbounded',sans-serif;lett
 <div class="ctn-w">
 <div class="sh rv"><div class="pill pill-l"><span class="sp">✦</span> Формати участі <span class="sp">✦</span></div><p class="sub" style="color:var(--tld)">Внеси бронь — і Влада зв'яжеться з тобою особисто</p></div>
 <div class="g3 rv">
-<div class="tc"><h3>Спостерігач 👀</h3><p class="tsub">Вчишся в своєму темпі</p><div class="tdur">6 тижнів навчання</div><ul class="tf"><li>10 практичних модулів</li><li>Зум-розбори — позиція спостерігача</li><li>Notion з матеріалами та шаблонами</li><li>4 місяці доступ після навчання</li></ul><a href="#form" class="btn btn-ol">Забронювати місце</a></div>
-<div class="tc feat"><div class="tbdg">Рекомендовано</div><h3>Активний учасник 🔥</h3><p class="tsub">Результат в групі</p><div class="tdur">10 тижнів навчання</div><ul class="tf"><li>10 практичних модулів</li><li>Щотижневі зум-розбори</li><li>Notion + персональний кабінет</li><li>Перевірка завдань Владою</li><li>Сильне ком'юніті</li><li>Зворотний зв'язок від Влади</li><li>Мотивація + подарунки</li><li>4 зуми із спікерами</li><li>6 місяців доступ</li></ul><a href="#form" class="btn btn-r">Забронювати місце →</a></div>
-<div class="tc vip"><div class="tbdg">Максимум</div><h3>VIP Партнерство 💖</h3><p class="tsub">Влада = партнер по запуску</p><div class="tdur">10 тижнів + 30 днів</div><ul class="tf"><li>Все з «Активний учасник»</li><li>Особисті зідзвони щотижня</li><li>Персональна стратегія</li><li>Повний контроль запуску</li><li>Концепт та брендинг</li><li>Перевірка воронок</li><li>Аналітика запусків Влади</li><li>Додаткові матеріали</li><li>8 місяців доступ</li></ul><a href="#form" class="btn btn-dk">Забронювати місце →</a></div>
+<div class="tc"><h3>Спостерігач 👀</h3><p class="tsub">Вчишся в своєму темпі</p><div class="tdur">6 тижнів навчання</div><ul class="tf"><li>10 практичних модулів</li><li>Зум-розбори — позиція спостерігача</li><li>Notion з матеріалами та шаблонами</li><li>4 місяці доступ після навчання</li></ul><a href="#" class="btn btn-ol" onclick="event.preventDefault();openModal('Спостерігач')">Забронювати місце</a></div>
+<div class="tc feat"><div class="tbdg">Рекомендовано</div><h3>Активний учасник 🔥</h3><p class="tsub">Результат в групі</p><div class="tdur">10 тижнів навчання</div><ul class="tf"><li>10 практичних модулів</li><li>Щотижневі зум-розбори</li><li>Notion + персональний кабінет</li><li>Перевірка завдань Владою</li><li>Сильне ком'юніті</li><li>Зворотний зв'язок від Влади</li><li>Мотивація + подарунки</li><li>4 зуми із спікерами</li><li>6 місяців доступ</li></ul><a href="#" class="btn btn-r" onclick="event.preventDefault();openModal('Активний учасник')">Забронювати місце →</a></div>
+<div class="tc vip"><div class="tbdg">Максимум</div><h3>VIP Партнерство 💖</h3><p class="tsub">Влада = партнер по запуску</p><div class="tdur">10 тижнів + 30 днів</div><ul class="tf"><li>Все з «Активний учасник»</li><li>Особисті зідзвони щотижня</li><li>Персональна стратегія</li><li>Повний контроль запуску</li><li>Концепт та брендинг</li><li>Перевірка воронок</li><li>Аналітика запусків Влади</li><li>Додаткові матеріали</li><li>8 місяців доступ</li></ul><a href="#" class="btn btn-dk" onclick="event.preventDefault();openModal('VIP Партнерство')">Забронювати місце →</a></div>
 </div>
 <div class="pay-row rv">
 <div class="pay-box"><h4>💳 Повна оплата</h4><p>2-годинна консультація + розбір запуску + спеціальна ціна</p></div>
@@ -450,6 +456,12 @@ footer p{font-size:12px;color:var(--tdd);font-family:'Unbounded',sans-serif;lett
 <div class="field"><label>Номер телефону</label><input type="tel" id="fphone" placeholder="+380..."></div>
 <div class="field"><label>Telegram</label><input type="text" id="ftg" placeholder="@username"></div>
 <div class="field"><label>Email</label><input type="email" id="femail" placeholder="email@example.com"></div>
+<div class="field"><label>Тариф</label>
+<div class="tariff-select" id="tariffSelect">
+<div class="tariff-opt" data-val="Спостерігач" onclick="selectTariff(this)">👀 Спостерігач</div>
+<div class="tariff-opt active" data-val="Активний учасник" onclick="selectTariff(this)">🔥 Активний учасник</div>
+<div class="tariff-opt" data-val="VIP Партнерство" onclick="selectTariff(this)">💖 VIP Партнерство</div>
+</div></div>
 <button class="btn btn-r form-btn" onclick="submitForm()">Перейти до оплати →</button>
 <p class="form-note">Після оплати броні Влада зв'яжеться з тобою особисто</p>
 </div>
@@ -461,6 +473,9 @@ footer p{font-size:12px;color:var(--tdd);font-family:'Unbounded',sans-serif;lett
 </div>
 
 <script>
+// ===== REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT URL =====
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxN8z-Orl9eaXLPnhcJxQOIuwJEsTVe_TrnusjkKNIceliSBnvn3R4tgZ06ZPIKZYQk/exec';
+
 // Stars
 const sc=document.getElementById('stars');for(let i=0;i<35;i++){const s=document.createElement('div');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3.5+'s';s.style.width=s.style.height=(1+Math.random()*1.5)+'px';sc.appendChild(s)}
 
@@ -472,20 +487,18 @@ document.querySelectorAll('.faq-q').forEach(q=>{q.addEventListener('click',()=>{
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.06,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 
-// All booking buttons → open modal popup
+// Booking buttons → open modal
 document.querySelectorAll('a[href="#form"],a[href="#cta"]').forEach(a=>{
   a.addEventListener('click',e=>{e.preventDefault();openModal()});
 });
-// Also hero CTA and tariff buttons
 document.querySelectorAll('a[href="#tariffs"]').forEach(a=>{
   a.addEventListener('click',e=>{e.preventDefault();document.getElementById('tariffs').scrollIntoView({behavior:'smooth'})});
 });
 
 // LIGHTBOX
 function openLightbox(src){
-  const lb=document.getElementById('lightbox');
   document.getElementById('lbImg').src=src;
-  lb.classList.add('active');
+  document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow='hidden';
 }
 function closeLightbox(){
@@ -493,8 +506,6 @@ function closeLightbox(){
   document.body.style.overflow='';
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeLightbox();closeModal()}});
-
-// Click on photos → lightbox
 document.querySelectorAll('.ph').forEach(ph=>{
   ph.addEventListener('click',()=>{
     const img=ph.querySelector('img');
@@ -503,7 +514,10 @@ document.querySelectorAll('.ph').forEach(ph=>{
 });
 
 // MODAL
-function openModal(){
+let selectedTariff='Активний учасник';
+
+function openModal(tariff){
+  if(tariff)setTariff(tariff);
   document.getElementById('modal').classList.add('active');
   document.body.style.overflow='hidden';
 }
@@ -512,25 +526,73 @@ function closeModal(){
   document.body.style.overflow='';
 }
 
-// STICKY CTA — show after scrolling past hero
+// TARIFF SELECTOR
+function selectTariff(el){
+  document.querySelectorAll('.tariff-opt').forEach(o=>o.classList.remove('active'));
+  el.classList.add('active');
+  selectedTariff=el.getAttribute('data-val');
+}
+function setTariff(name){
+  selectedTariff=name;
+  document.querySelectorAll('.tariff-opt').forEach(o=>{
+    o.classList.toggle('active',o.getAttribute('data-val')===name);
+  });
+}
+
+// STICKY CTA
 const sticky=document.getElementById('stickyCta');
 const heroEl=document.querySelector('.hero');
 window.addEventListener('scroll',()=>{
   const heroBottom=heroEl.getBoundingClientRect().bottom;
-  if(heroBottom<0){sticky.classList.add('show')}
-  else{sticky.classList.remove('show')}
+  if(heroBottom<0){sticky.classList.add('show')}else{sticky.classList.remove('show')}
 },{passive:true});
 
-// Form submit
+// FORM SUBMIT → Google Script + redirect to payment
 function submitForm(){
   const name=document.getElementById('fname').value.trim();
   const phone=document.getElementById('fphone').value.trim();
   const tg=document.getElementById('ftg').value.trim();
   const email=document.getElementById('femail').value.trim();
   if(!name||!phone||!tg||!email){alert('Будь ласка, заповни всі поля');return}
-  const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if(!emailRegex.test(email)){alert('Будь ласка, введи коректний email');return}
-  window.location.href='https://secure.wayforpay.com/button/b8095f5fb9fc1';
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('Будь ласка, введи коректний email');return}
+
+  // Disable button
+  const btn=document.querySelector('.form-btn');
+  btn.textContent='Зачекайте...';
+  btn.style.opacity='.6';
+  btn.style.pointerEvents='none';
+
+  // Send to Google Apps Script
+  const payload={
+    name:name,
+    phone:phone,
+    telegram:tg,
+    email:email,
+    tariff:selectedTariff,
+    payment_status:'Очікує оплату',
+    source:window.location.href,
+    utm_source:getUTM('utm_source'),
+    utm_medium:getUTM('utm_medium'),
+    utm_campaign:getUTM('utm_campaign')
+  };
+
+  // Save email for payment confirmation on thank-you page
+  localStorage.setItem('evolution_booking_email', email);
+
+  fetch(GOOGLE_SCRIPT_URL,{
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload)
+  }).finally(()=>{
+    window.location.href='https://secure.wayforpay.com/button/b8095f5fb9fc1';
+  });
+}
+
+// UTM helper
+function getUTM(param){
+  const url=new URLSearchParams(window.location.search);
+  return url.get(param)||'';
 }
 </script>
 </body>
