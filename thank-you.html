@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Дякуємо! — EVOLUTION</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Onest',sans-serif;background:#16161C;color:#E8E4DC;min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+body::before{content:'';position:absolute;top:20%;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(72,187,120,.2),transparent 60%);filter:blur(80px);pointer-events:none}
+.wrap{text-align:center;max-width:520px;padding:40px 28px;position:relative;z-index:1}
+.icon{font-size:72px;margin-bottom:28px;animation:bounce .8s ease}
+@keyframes bounce{0%{transform:scale(0)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+h1{font-family:'Unbounded',sans-serif;font-size:clamp(28px,5vw,40px);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.15}
+h1 span{color:#48BB78}
+p{font-size:16px;color:#918D86;line-height:1.7;margin-bottom:28px}
+.highlight{background:rgba(72,187,120,.1);border:1px solid rgba(72,187,120,.2);border-radius:16px;padding:24px;margin-bottom:32px}
+.highlight p{margin-bottom:0;font-size:15px;color:#E8E4DC}
+.highlight b{color:#48BB78}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Onest',sans-serif;font-weight:700;background:#D94462;color:#fff;font-size:15px;padding:16px 40px;border:none;border-radius:100px;cursor:pointer;text-decoration:none;transition:all .3s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(217,68,98,.25)}
+.sub{font-size:12px;color:#918D86;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="icon">✅</div>
+<h1>Оплата <span>пройшла успішно!</span></h1>
+<p>Дякуємо за бронювання місця в EVOLUTION. Твоя подорож до системних продажів починається!</p>
+<div class="highlight">
+<p>📱 <b>Влада зв'яжеться з тобою</b> протягом 24 годин, щоб обговорити деталі та підібрати найкращий формат участі.</p>
+</div>
+<p>Перевір свій Telegram та пошту — ми надішлемо підтвердження та наступні кроки.</p>
+<a href="evolution-landing.html" class="btn">← Повернутися на сайт</a>
+<p class="sub">EVOLUTION by Vladyslava Tsarenko © 2026</p>
+</div>
+</body>
+</html>
