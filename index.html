@@ -579,14 +579,18 @@ function submitForm(){
   // Save email for payment confirmation on thank-you page
   localStorage.setItem('evolution_booking_email', email);
 
-  fetch(GOOGLE_SCRIPT_URL,{
-    method:'POST',
-    mode:'no-cors',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(payload)
-  }).finally(()=>{
-    window.location.href='https://secure.wayforpay.com/button/b8095f5fb9fc1';
-  });
+  // Відправляємо дані в Google Таблицю
+  var formData = new FormData();
+  formData.append('data', JSON.stringify(payload));
+
+  // Використовуємо beacon або fetch без cors
+  var blob = new Blob([JSON.stringify(payload)], {type: 'text/plain'});
+  navigator.sendBeacon(GOOGLE_SCRIPT_URL, blob);
+
+  // Перенаправляємо на оплату через невелику затримку
+  setTimeout(function(){
+    window.location.href='https://secure.wayforpay.com/button/bbbea9e613a70';
+  }, 500);
 }
 
 // UTM helper
