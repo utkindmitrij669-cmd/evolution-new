@@ -35,5 +35,25 @@ p{font-size:16px;color:#918D86;line-height:1.7;margin-bottom:28px}
 <a href="index.html" class="btn">← Повернутися на сайт</a>
 <p class="sub">EVOLUTION by Vladyslava Tsarenko © 2026</p>
 </div>
+<script>
+// Оновлюємо статус оплати в Google Таблиці
+(function(){
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxN8z-Orl9eaXLPnhcJxQOIuwJEsTVe_TrnusjkKNIceliSBnvn3R4tgZ06ZPIKZYQk/exec';
+  const bookingEmail = localStorage.getItem('evolution_booking_email');
+  if(bookingEmail && GOOGLE_SCRIPT_URL !== 'ВСТАВЬ_СЮДИ_URL_GOOGLE_APPS_SCRIPT'){
+    fetch(GOOGLE_SCRIPT_URL,{
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        action:'update_payment',
+        email:bookingEmail
+      })
+    }).then(()=>{
+      localStorage.removeItem('evolution_booking_email');
+    }).catch(()=>{});
+  }
+})();
+</script>
 </body>
 </html>
